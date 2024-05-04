@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Gestion_de_arc_informatique
 {
@@ -39,18 +40,74 @@ namespace Gestion_de_arc_informatique
 
 
         public MySqlConnection getActualConnection() {
-            return this.conn;   
+            Console.WriteLine(this.conn);
+            return this.conn; 
         }
 
         public void Connect() {
-            string connstring = "server=" + this.server + ";uid=" + this.username + ";password=" + this.password + ";database=" + this.database + ";";
-            MySqlConnection conn = new MySqlConnection(connstring);
-            conn.Open();
-
-            if (conn.State == System.Data.ConnectionState.Open )
+            string connectionString = "server=" + this.server + ";database=" + this.database + ";user=" + this.username + ";password=" + this.password + ";";
+            Console.WriteLine(connectionString);
+            try
             {
-                Console.WriteLine("OPENN !!");
+                Console.WriteLine(connectionString);
+                MySqlConnection conn = new MySqlConnection(connectionString);
+                conn.Open();
+                this.conn = conn;
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+        public void isValidAccount(string username, string password)
+        {
+            getActualConnection();
+            string query = "SELECT password FROM eurobraille.users WHERE username = @username";
+            MySqlCommand command = new MySqlCommand(query, getActualConnection());
+            command.Parameters.AddWithValue("@username", username);
+
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+
+                if (reader.Read())
+                {
+                    string passwordFromDB = reader["password"].ToString();
+                    
+                    if (password.Equals(passwordFromDB))
+                    {
+                        System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong ID", "Wrong ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        reader.Close();
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Not a valid account", "Wrong ID", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    reader.Close();
+                }
+
+
+            }
+
+        }
+
+        public void executeQuery(string query)
+        {
+            MySqlCommand command = new MySqlCommand(query, getActualConnection());
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex) { Console.WriteLine("Querys wasnt executed"); }
         }
 
         public void Close()

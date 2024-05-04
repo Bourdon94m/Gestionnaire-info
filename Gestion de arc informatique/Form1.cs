@@ -20,11 +20,16 @@ namespace Gestion_de_arc_informatique
 
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
+        
+            Program.dbConnectionBase.isValidAccount(TextBoxUsername.Text, TextBoxPassword.Text);
             
-            string query = "SELECT password FROM eurrobraille.users WHERE username = @username";
-            MySqlCommand command = new MySqlCommand(query, Program.dbConnectionBase.getActualConnection());
 
             
+        }
+
+        private void labelForgotPassword_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Contactez : Matthieu.poulard@ceciaa.com", "Info", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
     }
 }
