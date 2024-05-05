@@ -77,7 +77,11 @@ namespace Gestion_de_arc_informatique
                     
                     if (password.Equals(passwordFromDB))
                     {
-                        System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+                        Main mainPage = new Main();
+                        Form1 form = new Form1();
+
+                        form.Visible = false;
+                        mainPage.Show();
 
 
                     }

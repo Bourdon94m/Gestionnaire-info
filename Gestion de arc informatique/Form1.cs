@@ -31,5 +31,15 @@ namespace Gestion_de_arc_informatique
         {
             MessageBox.Show("Contactez : Matthieu.poulard@ceciaa.com", "Info", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
+
+        private void siticoneCheckBoxPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            TextBoxPassword.PasswordChar = siticoneCheckBoxPassword.Checked ? '\0' : '*'; // if checked mask password
+        }
+
+        private void TextBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

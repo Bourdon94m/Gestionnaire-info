@@ -39,6 +39,7 @@
             this.siticonePictureBox2 = new Siticone.Desktop.UI.WinForms.SiticonePictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelForgotPassword = new System.Windows.Forms.Label();
+            this.siticoneCheckBoxPassword = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             this.siticonePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).BeginInit();
@@ -47,7 +48,7 @@
             // 
             // siticonePanel1
             // 
-            this.siticonePanel1.BackColor = System.Drawing.Color.Thistle;
+            this.siticonePanel1.BackColor = System.Drawing.Color.PowderBlue;
             this.siticonePanel1.Controls.Add(this.siticonePictureBox3);
             this.siticonePanel1.Location = new System.Drawing.Point(-7, -1);
             this.siticonePanel1.Margin = new System.Windows.Forms.Padding(2);
@@ -115,11 +116,12 @@
             this.TextBoxPassword.Location = new System.Drawing.Point(453, 249);
             this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxPassword.Name = "TextBoxPassword";
-            this.TextBoxPassword.PasswordChar = '\0';
+            this.TextBoxPassword.PasswordChar = '*';
             this.TextBoxPassword.PlaceholderText = "";
             this.TextBoxPassword.SelectedText = "";
             this.TextBoxPassword.Size = new System.Drawing.Size(297, 37);
             this.TextBoxPassword.TabIndex = 3;
+            this.TextBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // ButtonLogin
             // 
@@ -165,7 +167,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(493, 547);
+            this.label1.Location = new System.Drawing.Point(525, 547);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 18);
@@ -184,11 +186,31 @@
             this.labelForgotPassword.Text = "Forgot Password ?";
             this.labelForgotPassword.Click += new System.EventHandler(this.labelForgotPassword_Click);
             // 
+            // siticoneCheckBoxPassword
+            // 
+            this.siticoneCheckBoxPassword.AutoSize = true;
+            this.siticoneCheckBoxPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.siticoneCheckBoxPassword.CheckedState.BorderRadius = 0;
+            this.siticoneCheckBoxPassword.CheckedState.BorderThickness = 0;
+            this.siticoneCheckBoxPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.siticoneCheckBoxPassword.Font = new System.Drawing.Font("Microsoft YaHei Light", 9F);
+            this.siticoneCheckBoxPassword.Location = new System.Drawing.Point(657, 291);
+            this.siticoneCheckBoxPassword.Name = "siticoneCheckBoxPassword";
+            this.siticoneCheckBoxPassword.Size = new System.Drawing.Size(102, 21);
+            this.siticoneCheckBoxPassword.TabIndex = 10;
+            this.siticoneCheckBoxPassword.Text = "See password";
+            this.siticoneCheckBoxPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.siticoneCheckBoxPassword.UncheckedState.BorderRadius = 0;
+            this.siticoneCheckBoxPassword.UncheckedState.BorderThickness = 0;
+            this.siticoneCheckBoxPassword.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.siticoneCheckBoxPassword.CheckedChanged += new System.EventHandler(this.siticoneCheckBoxPassword_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 574);
+            this.Controls.Add(this.siticoneCheckBoxPassword);
             this.Controls.Add(this.labelForgotPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.siticonePictureBox2);
@@ -199,6 +221,7 @@
             this.Controls.Add(this.siticoneHtmlLabel1);
             this.Controls.Add(this.siticonePanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -223,6 +246,7 @@
         private Siticone.Desktop.UI.WinForms.SiticonePictureBox siticonePictureBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelForgotPassword;
+        private Siticone.Desktop.UI.WinForms.SiticoneCheckBox siticoneCheckBoxPassword;
     }
 }
 
