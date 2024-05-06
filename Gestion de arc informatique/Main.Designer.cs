@@ -31,27 +31,29 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelSideBar = new System.Windows.Forms.Panel();
-            this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
-            this.pictureBoxAbout = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSettings = new System.Windows.Forms.PictureBox();
-            this.pictureBoxHome = new System.Windows.Forms.PictureBox();
-            this.sideBarTimer = new System.Windows.Forms.Timer(this.components);
             this.pictureBoxCreateInterv = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
+            this.sideBarTimer = new System.Windows.Forms.Timer(this.components);
+            this.DateTimePickerInterv = new Siticone.Desktop.UI.WinForms.SiticoneDateTimePicker();
+            this.siticoneHtmlLabel1 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            this.TextBoxCommentary = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            this.ComboBoxStaff = new Siticone.Desktop.UI.WinForms.SiticoneComboBox();
+            this.ComboBoxMaterial = new Siticone.Desktop.UI.WinForms.SiticoneComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CheckBoxStatus = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
+            this.ButtonCreateInterv = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.panelSideBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAbout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreateInterv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideBar
             // 
             this.panelSideBar.BackColor = System.Drawing.Color.PowderBlue;
             this.panelSideBar.Controls.Add(this.pictureBoxCreateInterv);
-            this.panelSideBar.Controls.Add(this.pictureBoxHome);
-            this.panelSideBar.Controls.Add(this.pictureBoxSettings);
-            this.panelSideBar.Controls.Add(this.pictureBoxAbout);
             this.panelSideBar.Controls.Add(this.pictureBoxMenu);
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
             this.panelSideBar.MaximumSize = new System.Drawing.Size(322, 729);
@@ -59,6 +61,17 @@
             this.panelSideBar.Name = "panelSideBar";
             this.panelSideBar.Size = new System.Drawing.Size(126, 729);
             this.panelSideBar.TabIndex = 0;
+            // 
+            // pictureBoxCreateInterv
+            // 
+            this.pictureBoxCreateInterv.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxCreateInterv.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCreateInterv.Image")));
+            this.pictureBoxCreateInterv.Location = new System.Drawing.Point(48, 165);
+            this.pictureBoxCreateInterv.Name = "pictureBoxCreateInterv";
+            this.pictureBoxCreateInterv.Size = new System.Drawing.Size(39, 37);
+            this.pictureBoxCreateInterv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCreateInterv.TabIndex = 8;
+            this.pictureBoxCreateInterv.TabStop = false;
             // 
             // pictureBoxMenu
             // 
@@ -72,71 +85,184 @@
             this.pictureBoxMenu.TabStop = false;
             this.pictureBoxMenu.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pictureBoxAbout
-            // 
-            this.pictureBoxAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxAbout.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAbout.Image")));
-            this.pictureBoxAbout.Location = new System.Drawing.Point(48, 298);
-            this.pictureBoxAbout.Name = "pictureBoxAbout";
-            this.pictureBoxAbout.Size = new System.Drawing.Size(39, 38);
-            this.pictureBoxAbout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxAbout.TabIndex = 6;
-            this.pictureBoxAbout.TabStop = false;
-            // 
-            // pictureBoxSettings
-            // 
-            this.pictureBoxSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSettings.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSettings.Image")));
-            this.pictureBoxSettings.Location = new System.Drawing.Point(48, 358);
-            this.pictureBoxSettings.Name = "pictureBoxSettings";
-            this.pictureBoxSettings.Size = new System.Drawing.Size(39, 36);
-            this.pictureBoxSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxSettings.TabIndex = 7;
-            this.pictureBoxSettings.TabStop = false;
-            // 
-            // pictureBoxHome
-            // 
-            this.pictureBoxHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxHome.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxHome.Image")));
-            this.pictureBoxHome.Location = new System.Drawing.Point(48, 171);
-            this.pictureBoxHome.Name = "pictureBoxHome";
-            this.pictureBoxHome.Size = new System.Drawing.Size(39, 37);
-            this.pictureBoxHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxHome.TabIndex = 4;
-            this.pictureBoxHome.TabStop = false;
-            // 
             // sideBarTimer
             // 
             this.sideBarTimer.Tick += new System.EventHandler(this.sideBarTimer_Tick);
             // 
-            // pictureBoxCreateInterv
+            // DateTimePickerInterv
             // 
-            this.pictureBoxCreateInterv.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxCreateInterv.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCreateInterv.Image")));
-            this.pictureBoxCreateInterv.Location = new System.Drawing.Point(48, 235);
-            this.pictureBoxCreateInterv.Name = "pictureBoxCreateInterv";
-            this.pictureBoxCreateInterv.Size = new System.Drawing.Size(39, 37);
-            this.pictureBoxCreateInterv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxCreateInterv.TabIndex = 8;
-            this.pictureBoxCreateInterv.TabStop = false;
+            this.DateTimePickerInterv.Checked = true;
+            this.DateTimePickerInterv.FillColor = System.Drawing.Color.White;
+            this.DateTimePickerInterv.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DateTimePickerInterv.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateTimePickerInterv.Location = new System.Drawing.Point(190, 201);
+            this.DateTimePickerInterv.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateTimePickerInterv.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerInterv.Name = "DateTimePickerInterv";
+            this.DateTimePickerInterv.Size = new System.Drawing.Size(246, 78);
+            this.DateTimePickerInterv.TabIndex = 1;
+            this.DateTimePickerInterv.Value = new System.DateTime(2024, 5, 6, 23, 46, 4, 392);
+            // 
+            // siticoneHtmlLabel1
+            // 
+            this.siticoneHtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneHtmlLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneHtmlLabel1.Location = new System.Drawing.Point(595, 58);
+            this.siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
+            this.siticoneHtmlLabel1.Size = new System.Drawing.Size(276, 37);
+            this.siticoneHtmlLabel1.TabIndex = 2;
+            this.siticoneHtmlLabel1.Text = "Interventions Creator";
+            // 
+            // TextBoxCommentary
+            // 
+            this.TextBoxCommentary.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxCommentary.DefaultText = "";
+            this.TextBoxCommentary.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxCommentary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxCommentary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxCommentary.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxCommentary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxCommentary.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxCommentary.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxCommentary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxCommentary.Location = new System.Drawing.Point(514, 367);
+            this.TextBoxCommentary.Name = "TextBoxCommentary";
+            this.TextBoxCommentary.PasswordChar = '\0';
+            this.TextBoxCommentary.PlaceholderText = "";
+            this.TextBoxCommentary.SelectedText = "";
+            this.TextBoxCommentary.Size = new System.Drawing.Size(464, 203);
+            this.TextBoxCommentary.TabIndex = 3;
+            // 
+            // ComboBoxStaff
+            // 
+            this.ComboBoxStaff.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxStaff.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxStaff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxStaff.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxStaff.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxStaff.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxStaff.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxStaff.ItemHeight = 30;
+            this.ComboBoxStaff.Location = new System.Drawing.Point(514, 212);
+            this.ComboBoxStaff.Name = "ComboBoxStaff";
+            this.ComboBoxStaff.Size = new System.Drawing.Size(202, 36);
+            this.ComboBoxStaff.TabIndex = 4;
+            // 
+            // ComboBoxMaterial
+            // 
+            this.ComboBoxMaterial.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxMaterial.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxMaterial.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxMaterial.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxMaterial.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxMaterial.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxMaterial.ItemHeight = 30;
+            this.ComboBoxMaterial.Location = new System.Drawing.Point(776, 212);
+            this.ComboBoxMaterial.Name = "ComboBoxMaterial";
+            this.ComboBoxMaterial.Size = new System.Drawing.Size(202, 36);
+            this.ComboBoxMaterial.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(838, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 26);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Material";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(578, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 26);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Staff";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(683, 313);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(136, 26);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Commentary";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(258, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 26);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Interv Date";
+            // 
+            // CheckBoxStatus
+            // 
+            this.CheckBoxStatus.AutoSize = true;
+            this.CheckBoxStatus.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CheckBoxStatus.CheckedState.BorderRadius = 0;
+            this.CheckBoxStatus.CheckedState.BorderThickness = 0;
+            this.CheckBoxStatus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CheckBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CheckBoxStatus.Location = new System.Drawing.Point(1056, 219);
+            this.CheckBoxStatus.Name = "CheckBoxStatus";
+            this.CheckBoxStatus.Size = new System.Drawing.Size(198, 29);
+            this.CheckBoxStatus.TabIndex = 12;
+            this.CheckBoxStatus.Text = "Completed status";
+            this.CheckBoxStatus.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.CheckBoxStatus.UncheckedState.BorderRadius = 0;
+            this.CheckBoxStatus.UncheckedState.BorderThickness = 0;
+            this.CheckBoxStatus.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // ButtonCreateInterv
+            // 
+            this.ButtonCreateInterv.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonCreateInterv.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonCreateInterv.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonCreateInterv.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonCreateInterv.FillColor = System.Drawing.Color.Lime;
+            this.ButtonCreateInterv.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCreateInterv.ForeColor = System.Drawing.Color.Black;
+            this.ButtonCreateInterv.Location = new System.Drawing.Point(613, 625);
+            this.ButtonCreateInterv.Name = "ButtonCreateInterv";
+            this.ButtonCreateInterv.Size = new System.Drawing.Size(318, 76);
+            this.ButtonCreateInterv.TabIndex = 13;
+            this.ButtonCreateInterv.Text = "Create";
+            this.ButtonCreateInterv.Click += new System.EventHandler(this.ButtonCreateInterv_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 729);
+            this.Controls.Add(this.ButtonCreateInterv);
+            this.Controls.Add(this.CheckBoxStatus);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.ComboBoxMaterial);
+            this.Controls.Add(this.ComboBoxStaff);
+            this.Controls.Add(this.TextBoxCommentary);
+            this.Controls.Add(this.siticoneHtmlLabel1);
+            this.Controls.Add(this.DateTimePickerInterv);
             this.Controls.Add(this.panelSideBar);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Main";
             this.Text = "Form2";
             this.panelSideBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAbout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreateInterv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -144,10 +270,18 @@
 
         private System.Windows.Forms.Panel panelSideBar;
         private System.Windows.Forms.PictureBox pictureBoxMenu;
-        private System.Windows.Forms.PictureBox pictureBoxHome;
-        private System.Windows.Forms.PictureBox pictureBoxSettings;
-        private System.Windows.Forms.PictureBox pictureBoxAbout;
         private System.Windows.Forms.Timer sideBarTimer;
         private System.Windows.Forms.PictureBox pictureBoxCreateInterv;
+        private Siticone.Desktop.UI.WinForms.SiticoneDateTimePicker DateTimePickerInterv;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel1;
+        private Siticone.Desktop.UI.WinForms.SiticoneTextBox TextBoxCommentary;
+        private Siticone.Desktop.UI.WinForms.SiticoneComboBox ComboBoxStaff;
+        private Siticone.Desktop.UI.WinForms.SiticoneComboBox ComboBoxMaterial;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private Siticone.Desktop.UI.WinForms.SiticoneCheckBox CheckBoxStatus;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton ButtonCreateInterv;
     }
 }

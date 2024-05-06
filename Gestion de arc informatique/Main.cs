@@ -33,5 +33,22 @@ namespace Gestion_de_arc_informatique
             
             
         }
+
+        private void ButtonCreateInterv_Click(object sender, EventArgs e)
+        {
+            if (DateTimePickerInterv.Value == null ||
+                ComboBoxStaff.SelectedItem == null ||
+                ComboBoxMaterial.SelectedItem == null ||
+                string.IsNullOrEmpty(TextBoxCommentary.Text) ||
+                !CheckBoxStatus.Checked)
+            {
+                // Afficher un message d'erreur ou prendre une autre action appropriée
+                MessageBox.Show("Missing Fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Tous les champs sont remplis, procéder au traitement
+            }
+        }
     }
 }
