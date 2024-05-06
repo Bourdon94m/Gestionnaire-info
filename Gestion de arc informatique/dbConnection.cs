@@ -61,12 +61,12 @@ namespace Gestion_de_arc_informatique
 
         }
 
-        public void isValidAccount(string username, string password)
+        public void isValidAccount(string email, string password)
         {
             getActualConnection();
-            string query = "SELECT password FROM eurobraille.users WHERE username = @username";
+            string query = "SELECT password FROM gestion_matos.staff WHERE email = @email";
             MySqlCommand command = new MySqlCommand(query, getActualConnection());
-            command.Parameters.AddWithValue("@username", username);
+            command.Parameters.AddWithValue("@email", email);
 
             using (MySqlDataReader reader = command.ExecuteReader())
             {

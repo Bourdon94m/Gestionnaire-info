@@ -29,7 +29,7 @@ namespace Gestion_de_arc_informatique
 
         private void labelForgotPassword_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Contactez : Matthieu.poulard@ceciaa.com", "Info", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            MessageBox.Show("Contactez : Matthieu.poulard@gestion_matos.com", "Info", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         private void siticoneCheckBoxPassword_CheckedChanged(object sender, EventArgs e)
