@@ -63,7 +63,7 @@ namespace Gestion_de_arc_informatique
             }
             else
             {
-                Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToShortDateString(), ComboBoxStaff.GetItemText, ComboBoxMaterial.GetItemText, )
+                //Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToShortDateString(), ComboBoxStaff.GetItemText, ComboBoxMaterial.GetItemText, )
                 
 
             }
