@@ -83,7 +83,6 @@ namespace Gestion_de_arc_informatique
                         form.Visible = false;
                         mainPage.Show();
 
-
                     }
                     else
                     {
@@ -114,9 +113,28 @@ namespace Gestion_de_arc_informatique
             catch (Exception ex) { Console.WriteLine("Querys wasnt executed"); }
         }
 
-        public void Close()
+
+        // Overloading method 
+        public void executeQuery(string date, string staff_id, int material_id, bool completed, string commentary)
         {
-            conn.Close();
+            string query = $"INSERT INTO gestion_matos.intervention (planned_date, commentary, staff_id, material_id, completed VALUES (@date, @staff, @material, @completed, @commentary)";
+            MySqlCommand command = new MySqlCommand(query, getActualConnection());
+
+            // Create Parameters for sql injection
+            command.Parameters.AddWithValue("@date", date);
+            command.Parameters.AddWithValue("@staff", staff_id);
+            command.Parameters.AddWithValue("@material", material_id);
+            command.Parameters.AddWithValue("@completed", completed);
+            command.Parameters.AddWithValue("@commentary", commentary);
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex) { Console.WriteLine("Querys wasnt executed"); }
         }
+
+
+        public void Close() { conn.Close(); }
     }
 }
