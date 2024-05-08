@@ -42,7 +42,7 @@ namespace Gestion_de_arc_informatique
         {
 
             // PART TEST COMBOBOX DATA
-            getStaffFromDB();
+            insertToComboBox();
 
             if (DateTimePickerInterv.Value == null ||
                 ComboBoxStaff.SelectedItem == null ||
@@ -63,7 +63,7 @@ namespace Gestion_de_arc_informatique
             }
             else
             {
-                Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToShortDateString(), ComboBoxStaff.SelectedValue.ToString(), )
+                Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToShortDateString(), ComboBoxStaff.GetItemText, ComboBoxMaterial.GetItemText, )
                 
 
             }
@@ -72,21 +72,28 @@ namespace Gestion_de_arc_informatique
 
 
         // Get all Staff and their first name from DB
-        public void getStaffFromDB()
+        public void insertToComboBox()
         {
             // Insert les data dans les combobox
-            DataSet dataSet = new DataSet(); // initialise le dataset
+            DataSet dataSet_staff = new DataSet(); // initialise le dataset du staff
+            DataSet dataSet_material = new DataSet(); // initialise le dataset du material
 
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT id_staff, first_name FROM gestion_matos.staff", Program.dbConnectionBase.getActualConnection()))
+
+
+            string query_staff = "SELECT id_staff, first_name FROM gestion_matos.staff";
+            string query_material = "SELECT name FROM gestion_matos.material";
+
+            // Using du staff
+            using (MySqlDataAdapter staff_adapter = new MySqlDataAdapter(query_staff,Program.dbConnectionBase.getActualConnection()))
             {
                 try
                 {
                     // Essaye de se connecter a la db
                     Program.dbConnectionBase.getActualConnection();
                     // Remplissez le DataSet avec les résultats de la requête
-                    adapter.Fill(dataSet);
+                    staff_adapter.Fill(dataSet_staff);
 
-                    DataTable dataTable = dataSet.Tables[0];
+                    DataTable dataTable = dataSet_staff.Tables[0];
                     foreach (DataRow row in dataTable.Rows)
                     {
                         object columnValue = $"[{row["id_staff"]}] {row["first_name"]}";
@@ -97,6 +104,30 @@ namespace Gestion_de_arc_informatique
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error" + ex.Message);
+                }
+
+
+                using (MySqlDataAdapter material_adapter = new MySqlDataAdapter(query_material, Program.dbConnectionBase.getActualConnection()))
+                {
+                    try
+                    {
+                        // Essaye de se connecter a la db
+                        Program.dbConnectionBase.getActualConnection();
+                        // Remplissez le DataSet avec les résultats de la requête
+                        material_adapter.Fill(dataSet_material);
+
+                        DataTable dataTable = dataSet_material.Tables[0];
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            object columnValue = $"{row["name"]}";
+                            ComboBoxMaterial.Items.Add(columnValue);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error" + ex.Message);
+                    }
                 }
             }
         }
