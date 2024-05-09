@@ -41,9 +41,6 @@ namespace Gestion_de_arc_informatique
         private void ButtonCreateInterv_Click(object sender, EventArgs e)
         {
 
-            // PART TEST COMBOBOX DATA
-            insertToComboBox();
-
             if (DateTimePickerInterv.Value == null ||
                 ComboBoxStaff.SelectedItem == null ||
                 ComboBoxMaterial.SelectedItem == null ||
@@ -60,12 +57,16 @@ namespace Gestion_de_arc_informatique
                 Console.WriteLine("Status: " + CheckBoxStatus.Checked);
                 Console.WriteLine("Commentary: " + TextBoxCommentary.Text);
 
+               
+
             }
             else
             {
-                //Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToShortDateString(), ComboBoxStaff.GetItemText, ComboBoxMaterial.GetItemText, )
-                
 
+
+                Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToShortDateString(), ComboBoxStaff.SelectedItem.ToString(), Int32.Parse(ComboBoxMaterial.SelectedItem.ToString()), CheckBoxStatus.Checked, TextBoxCommentary.Text);
+
+                MessageBox.Show($"Youve just created new interventions at this date {DateTimePickerInterv.Value.ToShortTimeString()}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -132,6 +133,10 @@ namespace Gestion_de_arc_informatique
             }
         }
 
-        
+        private void Main_Load(object sender, EventArgs e)
+        {
+            // PART TEST COMBOBOX DATA
+            insertToComboBox();
+        }
     }
 }
