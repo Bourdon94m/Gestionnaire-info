@@ -49,24 +49,22 @@ namespace Gestion_de_arc_informatique
                 // Afficher un message d'erreur ou prendre une autre action appropriée
                 MessageBox.Show("Missing Fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
-                // console test 
-                Console.WriteLine("Date: " + DateTimePickerInterv.Value.ToShortDateString());
-                Console.WriteLine("Staff: " + ComboBoxStaff.Text);
-                Console.WriteLine("Material: " + ComboBoxMaterial.Text);
-                Console.WriteLine("Status: " + CheckBoxStatus.Checked);
-                Console.WriteLine("Commentary: " + TextBoxCommentary.Text);
-
-               
-
             }
             else
             {
+                int current_index = ComboBoxMaterial.SelectedIndex;
+
+                // Insert data in db and we create interventions here
+                Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToString("d"), // recupere la date en format dd/mm/yy
+                 TextBoxCommentary.Text, // recupere le text
+                 current_index+1, // recupere l'index
+                 CheckBoxStatus.Checked, // Recupere le bool
+                 ComboBoxStaff.SelectedItem.ToString()); // Recupere le text
 
 
-                Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToShortDateString(), ComboBoxStaff.SelectedItem.ToString(), Int32.Parse(ComboBoxMaterial.SelectedItem.ToString()), CheckBoxStatus.Checked, TextBoxCommentary.Text);
 
-                MessageBox.Show($"Youve just created new interventions at this date {DateTimePickerInterv.Value.ToShortTimeString()}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // messages 
+                MessageBox.Show($"Youve just created new interventions at this date {DateTimePickerInterv.Value}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

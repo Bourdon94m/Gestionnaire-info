@@ -115,24 +115,29 @@ namespace Gestion_de_arc_informatique
 
 
         // Overloading method 
-        public void executeQuery(string date, string staff_id, int material_id, bool completed, string commentary)
+        public void executeQuery(string date, string commentary, int material_id, bool completed, string staff_id)
         {
-            string query = $"INSERT INTO gestion_matos.intervention (planned_date, commentary, staff_id, material_id, completed VALUES (@date, @staff, @material, @completed, @commentary)";
+            string query = $"SET FOREIGN_KEY_CHECKS=0; INSERT INTO gestion_matos.intervention (planned_date, commentary, material_id, completed, staff_id) VALUES (@date, @commentary, @material, @completed, @staff); SET FOREIGN_KEY_CHECKS=1";
             MySqlCommand command = new MySqlCommand(query, getActualConnection());
 
-            // Create Parameters for sql injection
+            // Créer des paramètres pour éviter l'injection SQL
             command.Parameters.AddWithValue("@date", date);
-            command.Parameters.AddWithValue("@staff", staff_id);
+            command.Parameters.AddWithValue("@commentary", commentary);
             command.Parameters.AddWithValue("@material", material_id);
             command.Parameters.AddWithValue("@completed", completed);
-            command.Parameters.AddWithValue("@commentary", commentary);
+            command.Parameters.AddWithValue("@staff", staff_id);
 
             try
             {
-                command.ExecuteNonQuery();
+                command.ExecuteNonQuery(); // Utilisez ExecuteNonQuery() pour les requêtes INSERT, UPDATE ou DELETE
             }
-            catch (Exception ex) { Console.WriteLine("Querys wasnt executed"); }
+            catch (Exception ex)
+            {
+                Console.WriteLine("La requête n'a pas été exécutée");
+                MessageBox.Show($"{ex.Message}");
+            }
         }
+
 
 
         public void Close() { conn.Close(); }

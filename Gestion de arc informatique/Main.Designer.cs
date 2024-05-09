@@ -90,7 +90,7 @@
             this.DateTimePickerInterv.FillColor = System.Drawing.Color.White;
             this.DateTimePickerInterv.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimePickerInterv.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimePickerInterv.Location = new System.Drawing.Point(849, 130);
+            this.DateTimePickerInterv.Location = new System.Drawing.Point(833, 253);
             this.DateTimePickerInterv.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateTimePickerInterv.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimePickerInterv.Name = "DateTimePickerInterv";
@@ -131,7 +131,7 @@
             this.ComboBoxStaff.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.ComboBoxStaff.ForeColor = System.Drawing.Color.Black;
             this.ComboBoxStaff.ItemHeight = 30;
-            this.ComboBoxStaff.Location = new System.Drawing.Point(303, 130);
+            this.ComboBoxStaff.Location = new System.Drawing.Point(287, 253);
             this.ComboBoxStaff.Name = "ComboBoxStaff";
             this.ComboBoxStaff.Size = new System.Drawing.Size(202, 36);
             this.ComboBoxStaff.TabIndex = 4;
@@ -148,16 +148,16 @@
             this.ComboBoxMaterial.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.ComboBoxMaterial.ForeColor = System.Drawing.Color.Black;
             this.ComboBoxMaterial.ItemHeight = 30;
-            this.ComboBoxMaterial.Location = new System.Drawing.Point(565, 130);
+            this.ComboBoxMaterial.Location = new System.Drawing.Point(549, 253);
             this.ComboBoxMaterial.Name = "ComboBoxMaterial";
             this.ComboBoxMaterial.Size = new System.Drawing.Size(202, 36);
-            this.ComboBoxMaterial.TabIndex = 5;
+            this.ComboBoxMaterial.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(627, 91);
+            this.label3.Location = new System.Drawing.Point(611, 214);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 26);
             this.label3.TabIndex = 8;
@@ -167,7 +167,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(367, 91);
+            this.label2.Location = new System.Drawing.Point(351, 214);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 26);
             this.label2.TabIndex = 9;
@@ -187,7 +187,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(929, 76);
+            this.label1.Location = new System.Drawing.Point(913, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 26);
             this.label1.TabIndex = 11;
@@ -202,7 +202,7 @@
             this.CheckBoxStatus.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CheckBoxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.CheckBoxStatus.ForeColor = System.Drawing.Color.Black;
-            this.CheckBoxStatus.Location = new System.Drawing.Point(902, 281);
+            this.CheckBoxStatus.Location = new System.Drawing.Point(291, 348);
             this.CheckBoxStatus.Name = "CheckBoxStatus";
             this.CheckBoxStatus.Size = new System.Drawing.Size(198, 29);
             this.CheckBoxStatus.TabIndex = 12;
@@ -215,7 +215,7 @@
             // ButtonCreateInterv
             // 
             this.ButtonCreateInterv.AutoRoundedCorners = true;
-            this.ButtonCreateInterv.BorderRadius = 10;
+            this.ButtonCreateInterv.BorderRadius = 55;
             this.ButtonCreateInterv.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ButtonCreateInterv.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ButtonCreateInterv.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
