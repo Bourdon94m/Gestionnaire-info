@@ -52,19 +52,25 @@ namespace Gestion_de_arc_informatique
             }
             else
             {
-                int current_index = ComboBoxMaterial.SelectedIndex;
 
-                // Insert data in db and we create interventions here
-                Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToString("d"), // recupere la date en format dd/mm/yy
-                 TextBoxCommentary.Text, // recupere le text
-                 current_index+1, // recupere l'index
-                 CheckBoxStatus.Checked, // Recupere le bool
-                 ComboBoxStaff.SelectedItem.ToString()); // Recupere le text
+                DateTime current_date = DateTime.Now; // Get actual date
+                if (DateTimePickerInterv.Value < current_date)  { MessageBox.Show("Interv cannot be before today !!"); } // Compare these date 
+                else
+                {
+                    int current_index = ComboBoxMaterial.SelectedIndex;
+
+                    // Insert data in db and we create interventions here
+                    Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToString("d"), // recupere la date en format dd/mm/yy
+                     TextBoxCommentary.Text, // recupere le text
+                     current_index + 1, // recupere l'index
+                     CheckBoxStatus.Checked, // Recupere le bool
+                     ComboBoxStaff.SelectedItem.ToString()); // Recupere le text
 
 
 
-                // messages 
-                MessageBox.Show($"Youve just created new interventions at this date {DateTimePickerInterv.Value}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // messages 
+                    MessageBox.Show($"Youve just created new interventions at this date {DateTimePickerInterv.Value}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
 
         }
