@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace Gestion_de_arc_informatique
@@ -67,7 +68,7 @@ namespace Gestion_de_arc_informatique
             string query = "SELECT password FROM gestion_matos.staff WHERE email = @email";
             MySqlCommand command = new MySqlCommand(query, getActualConnection());
             command.Parameters.AddWithValue("@email", email);
-
+ 
             using (MySqlDataReader reader = command.ExecuteReader())
             {
 
@@ -106,11 +107,8 @@ namespace Gestion_de_arc_informatique
         {
             MySqlCommand command = new MySqlCommand(query, getActualConnection());
 
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex) { Console.WriteLine("Querys wasnt executed"); }
+            try { command.ExecuteNonQuery(); }  // Test if query was executed
+            catch (Exception ex) { Console.WriteLine("Querys wasnt executed"); } // If not executed return debug messages
         }
 
 
@@ -127,10 +125,7 @@ namespace Gestion_de_arc_informatique
             command.Parameters.AddWithValue("@completed", completed);
             command.Parameters.AddWithValue("@staff", staff_id);
 
-            try
-            {
-                command.ExecuteNonQuery(); // Utilisez ExecuteNonQuery() pour les requêtes INSERT, UPDATE ou DELETE
-            }
+            try { command.ExecuteNonQuery(); } // Utilisez ExecuteNonQuery() pour les requêtes INSERT, UPDATE ou DELETE 
             catch (Exception ex)
             {
                 Console.WriteLine("La requête n'a pas été exécutée");
@@ -139,6 +134,46 @@ namespace Gestion_de_arc_informatique
         }
 
 
+        // Hash le mot de passe en params
+        public string hashPassword(string password)
+        {
+            byte[] salt = GenerateRandomSalt(); // Genere le salt randomly
+
+            //configuration des params PBKDF2
+            int iterations = 10000;
+            int derivedKeyLength = 32;
+
+
+            // Creer un obj PBKDF2 avec password et salt
+            using (Rfc2898DeriveBytes pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations))
+            {
+                //Calculer la clé dérivée
+                byte[] derivedKey = pbkdf2.GetBytes(derivedKeyLength);
+
+                //Convertir la clé dérivée en chaine héxa
+                StringBuilder sb = new StringBuilder();
+                foreach(byte b in derivedKey)
+                {
+                    sb.Append(b.ToString("x2"));
+                }
+
+                Console.WriteLine("Mot de passe haché (PBKDF2) : " + sb.ToString());
+                return sb.ToString(); // retourne le mdp
+               
+            }
+
+        }
+
+        // Méthode pour générer un sel aléatoire
+        public byte[] GenerateRandomSalt()
+        {
+            byte[] salt = new byte[16]; // 16 octets pour le sel
+            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+            {
+                rng.GetBytes(salt);
+            }
+            return salt;
+        }
 
         public void Close() { conn.Close(); }
     }

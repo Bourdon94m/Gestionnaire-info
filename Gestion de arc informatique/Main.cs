@@ -142,5 +142,10 @@ namespace Gestion_de_arc_informatique
             // PART TEST COMBOBOX DATA
             insertToComboBox();
         }
+
+        private void siticoneHtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

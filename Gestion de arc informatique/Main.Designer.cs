@@ -42,9 +42,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CheckBoxStatus = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             this.ButtonCreateInterv = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.siticoneHtmlLabel1 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            this.siticoneHtmlLabel2 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
+            this.siticoneCustomGradientPanel1 = new Siticone.Desktop.UI.WinForms.SiticoneCustomGradientPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreateInterv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
+            this.siticoneCustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideBar
@@ -85,7 +93,7 @@
             // DateTimePickerInterv
             // 
             this.DateTimePickerInterv.AutoRoundedCorners = true;
-            this.DateTimePickerInterv.BorderRadius = 38;
+            this.DateTimePickerInterv.BorderRadius = 10;
             this.DateTimePickerInterv.Checked = true;
             this.DateTimePickerInterv.FillColor = System.Drawing.Color.White;
             this.DateTimePickerInterv.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -123,7 +131,7 @@
             // 
             this.ComboBoxStaff.AutoRoundedCorners = true;
             this.ComboBoxStaff.BackColor = System.Drawing.Color.Transparent;
-            this.ComboBoxStaff.BorderRadius = 17;
+            this.ComboBoxStaff.BorderRadius = 10;
             this.ComboBoxStaff.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.ComboBoxStaff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxStaff.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -140,7 +148,7 @@
             // 
             this.ComboBoxMaterial.AutoRoundedCorners = true;
             this.ComboBoxMaterial.BackColor = System.Drawing.Color.Transparent;
-            this.ComboBoxMaterial.BorderRadius = 17;
+            this.ComboBoxMaterial.BorderRadius = 10;
             this.ComboBoxMaterial.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.ComboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxMaterial.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -187,7 +195,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(913, 199);
+            this.label1.Location = new System.Drawing.Point(918, 214);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 26);
             this.label1.TabIndex = 11;
@@ -215,7 +223,7 @@
             // ButtonCreateInterv
             // 
             this.ButtonCreateInterv.AutoRoundedCorners = true;
-            this.ButtonCreateInterv.BorderRadius = 55;
+            this.ButtonCreateInterv.BorderRadius = 10;
             this.ButtonCreateInterv.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ButtonCreateInterv.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ButtonCreateInterv.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -230,11 +238,69 @@
             this.ButtonCreateInterv.Text = "Create";
             this.ButtonCreateInterv.Click += new System.EventHandler(this.ButtonCreateInterv_Click);
             // 
+            // siticoneHtmlLabel1
+            // 
+            this.siticoneHtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneHtmlLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneHtmlLabel1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.siticoneHtmlLabel1.Location = new System.Drawing.Point(80, 58);
+            this.siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
+            this.siticoneHtmlLabel1.Size = new System.Drawing.Size(106, 22);
+            this.siticoneHtmlLabel1.TabIndex = 14;
+            this.siticoneHtmlLabel1.Text = "Show material";
+            this.siticoneHtmlLabel1.Click += new System.EventHandler(this.siticoneHtmlLabel1_Click);
+            // 
+            // siticoneHtmlLabel2
+            // 
+            this.siticoneHtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneHtmlLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneHtmlLabel2.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.siticoneHtmlLabel2.Location = new System.Drawing.Point(80, 22);
+            this.siticoneHtmlLabel2.Name = "siticoneHtmlLabel2";
+            this.siticoneHtmlLabel2.Size = new System.Drawing.Size(89, 22);
+            this.siticoneHtmlLabel2.TabIndex = 15;
+            this.siticoneHtmlLabel2.Text = "Show Interv";
+            // 
+            // siticoneCustomGradientPanel1
+            // 
+            this.siticoneCustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneCustomGradientPanel1.BorderRadius = 10;
+            this.siticoneCustomGradientPanel1.Controls.Add(this.pictureBox2);
+            this.siticoneCustomGradientPanel1.Controls.Add(this.pictureBox1);
+            this.siticoneCustomGradientPanel1.Controls.Add(this.siticoneHtmlLabel2);
+            this.siticoneCustomGradientPanel1.Controls.Add(this.siticoneHtmlLabel1);
+            this.siticoneCustomGradientPanel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.siticoneCustomGradientPanel1.Location = new System.Drawing.Point(1112, 39);
+            this.siticoneCustomGradientPanel1.Name = "siticoneCustomGradientPanel1";
+            this.siticoneCustomGradientPanel1.Size = new System.Drawing.Size(214, 103);
+            this.siticoneCustomGradientPanel1.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(44, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(42, 51);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(31, 28);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 729);
+            this.Controls.Add(this.siticoneCustomGradientPanel1);
             this.Controls.Add(this.ButtonCreateInterv);
             this.Controls.Add(this.CheckBoxStatus);
             this.Controls.Add(this.label1);
@@ -255,6 +321,10 @@
             this.panelSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreateInterv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).EndInit();
+            this.siticoneCustomGradientPanel1.ResumeLayout(false);
+            this.siticoneCustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +345,10 @@
         private System.Windows.Forms.Label label1;
         private Siticone.Desktop.UI.WinForms.SiticoneCheckBox CheckBoxStatus;
         private Siticone.Desktop.UI.WinForms.SiticoneButton ButtonCreateInterv;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel1;
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel2;
+        private Siticone.Desktop.UI.WinForms.SiticoneCustomGradientPanel siticoneCustomGradientPanel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
