@@ -79,10 +79,13 @@ namespace Gestion_de_arc_informatique
                     if (password.Equals(passwordFromDB))
                     {
                         Main mainPage = new Main();
-                        Form1 form = new Form1();
+                        Form formPage = new Form();
 
-                        form.Visible = false;
+                        mainPage.Visible = true;
                         mainPage.Show();
+                        formPage.Visible = false;                        
+                        
+                        
 
                     }
                     else
@@ -158,7 +161,7 @@ namespace Gestion_de_arc_informatique
                 }
 
                 Console.WriteLine("Mot de passe haché (PBKDF2) : " + sb.ToString());
-                return sb.ToString(); // retourne le mdp
+                return sb.ToString();
                
             }
 
@@ -176,5 +179,30 @@ namespace Gestion_de_arc_informatique
         }
 
         public void Close() { conn.Close(); }
+
+
+        // Fonction pour crée un staff
+        public void createStaff(string first_name, string last_name, string email, string password) {
+
+            string query = $"INSERT INTO gestion_matos.staff (first_name, last_name, email, password) VALUES (@firstname, @lastname, @email, @password)";
+            MySqlCommand command = new MySqlCommand(query, getActualConnection());
+
+
+            // Créer des paramètres pour éviter l'injection SQL
+            command.Parameters.AddWithValue("@firstname", first_name);
+            command.Parameters.AddWithValue("@lastname", last_name);
+            command.Parameters.AddWithValue("@email", email);
+            command.Parameters.AddWithValue("@password", password);
+
+
+            try { command.ExecuteNonQuery(); } // Utilisez ExecuteNonQuery() pour les requêtes INSERT, UPDATE ou DELETE 
+            catch (Exception ex)
+            {
+                Console.WriteLine("Le staff na pas été crée car la requete n'a pas fonctionné !!");
+            }
+
+
+        }
+
     }
 }

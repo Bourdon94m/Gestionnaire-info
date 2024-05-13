@@ -16,6 +16,7 @@ namespace Gestion_de_arc_informatique
 
     public partial class Main : Form
     {
+
         public Main()
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace Gestion_de_arc_informatique
             
             
         }
-
+        
         private void ButtonCreateInterv_Click(object sender, EventArgs e)
         {
 
@@ -48,7 +49,7 @@ namespace Gestion_de_arc_informatique
             {
                 // Afficher un message d'erreur ou prendre une autre action appropriée
                 MessageBox.Show("Missing Fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                
             }
             else
             {
@@ -146,6 +147,14 @@ namespace Gestion_de_arc_informatique
         private void siticoneHtmlLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            Material materialWindow = new Material();
+            materialWindow.Visible = true;
+            materialWindow.Show();
+            this.Visible = false;
         }
     }
 }
