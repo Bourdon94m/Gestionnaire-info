@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Gestion_de_arc_informatique
@@ -200,9 +201,30 @@ namespace Gestion_de_arc_informatique
             {
                 Console.WriteLine("Le staff na pas été crée car la requete n'a pas fonctionné !!");
             }
-
-
         }
 
+        public void dumpDatabase(string outputFile) {
+            string query = $"mysqldump -u root -p root > {outputFile}";
+
+            try 
+            {
+                using (Process process = new Process())
+                {
+                    process.StartInfo.FileName = "/bin/bash";
+                    process.StartInfo.Arguments = "-c \"" + query + "\"";
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.Start();
+
+                    string result = process.StandardOutput.ReadToEnd();
+
+                    process.WaitForExit();
+                }
+            } 
+            catch (Exception ex)
+            {
+                Console.WriteLine("La requête DUMP n'a pas été exécutée");
+            }
+        }
     }
 }

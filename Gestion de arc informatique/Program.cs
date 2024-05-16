@@ -16,6 +16,7 @@ namespace Gestion_de_arc_informatique
         static void Main()
         {
             dbConnectionBase = new dbConnection("localhost", "gestion_matos", "root", "root");
+            dbConnectionBase.dumpDatabase(@"C:\Users\bourd\Desktop\Jeux");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
