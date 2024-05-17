@@ -3,23 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>README - Projet GestionMatos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        .emoji {
-            font-size: 1.2em;
-            margin-right: 0.5em;
-        }
-        .important {
-            font-style: italic;
-            font-weight: bold;
-        }
-    </style>
+    
 </head>
 <body>
 
