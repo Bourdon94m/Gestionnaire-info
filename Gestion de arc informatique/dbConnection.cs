@@ -203,28 +203,6 @@ namespace Gestion_de_arc_informatique
             }
         }
 
-        public void dumpDatabase(string outputFile) {
-            string query = $"mysqldump -u root -p root > {outputFile}";
-
-            try 
-            {
-                using (Process process = new Process())
-                {
-                    process.StartInfo.FileName = "/bin/bash";
-                    process.StartInfo.Arguments = "-c \"" + query + "\"";
-                    process.StartInfo.UseShellExecute = false;
-                    process.StartInfo.RedirectStandardOutput = true;
-                    process.Start();
-
-                    string result = process.StandardOutput.ReadToEnd();
-
-                    process.WaitForExit();
-                }
-            } 
-            catch (Exception ex)
-            {
-                Console.WriteLine("La requête DUMP n'a pas été exécutée");
-            }
-        }
+        
     }
 }

@@ -44,9 +44,21 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.siticoneButton2 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.siticoneButton3 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.ButtonAdd = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.ButtonUpdate = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.ButtonDelete = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.textBoxSN = new System.Windows.Forms.TextBox();
+            this.textBoxMTBF = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxType = new System.Windows.Forms.TextBox();
+            this.textBoxDesc = new System.Windows.Forms.TextBox();
+            this.listBoxSiteID = new System.Windows.Forms.ListBox();
+            this.labelSn = new System.Windows.Forms.Label();
+            this.labelMTBF = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelType = new System.Windows.Forms.Label();
+            this.labelSiteID = new System.Windows.Forms.Label();
+            this.labelDesc = new System.Windows.Forms.Label();
             this.panelSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreateInterv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -191,64 +203,170 @@
             this.Column7.HeaderText = "site_id";
             this.Column7.Name = "Column7";
             // 
-            // siticoneButton1
+            // ButtonAdd
             // 
-            this.siticoneButton1.BorderRadius = 10;
-            this.siticoneButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.siticoneButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.siticoneButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.siticoneButton1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.siticoneButton1.ForeColor = System.Drawing.Color.White;
-            this.siticoneButton1.IndicateFocus = true;
-            this.siticoneButton1.Location = new System.Drawing.Point(175, 593);
-            this.siticoneButton1.Name = "siticoneButton1";
-            this.siticoneButton1.Size = new System.Drawing.Size(142, 44);
-            this.siticoneButton1.TabIndex = 3;
-            this.siticoneButton1.Text = "Add";
+            this.ButtonAdd.BorderRadius = 10;
+            this.ButtonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.ButtonAdd.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonAdd.ForeColor = System.Drawing.Color.White;
+            this.ButtonAdd.IndicateFocus = true;
+            this.ButtonAdd.Location = new System.Drawing.Point(175, 593);
+            this.ButtonAdd.Name = "ButtonAdd";
+            this.ButtonAdd.Size = new System.Drawing.Size(142, 44);
+            this.ButtonAdd.TabIndex = 3;
+            this.ButtonAdd.Text = "Add";
+            this.ButtonAdd.Click += new System.EventHandler(this.siticoneButton1_Click);
             // 
-            // siticoneButton2
+            // ButtonUpdate
             // 
-            this.siticoneButton2.BorderRadius = 10;
-            this.siticoneButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.siticoneButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.siticoneButton2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
-            this.siticoneButton2.ForeColor = System.Drawing.Color.White;
-            this.siticoneButton2.IndicateFocus = true;
-            this.siticoneButton2.Location = new System.Drawing.Point(327, 593);
-            this.siticoneButton2.Name = "siticoneButton2";
-            this.siticoneButton2.Size = new System.Drawing.Size(142, 44);
-            this.siticoneButton2.TabIndex = 4;
-            this.siticoneButton2.Text = "Update";
+            this.ButtonUpdate.BorderRadius = 10;
+            this.ButtonUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonUpdate.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
+            this.ButtonUpdate.ForeColor = System.Drawing.Color.White;
+            this.ButtonUpdate.IndicateFocus = true;
+            this.ButtonUpdate.Location = new System.Drawing.Point(327, 593);
+            this.ButtonUpdate.Name = "ButtonUpdate";
+            this.ButtonUpdate.Size = new System.Drawing.Size(142, 44);
+            this.ButtonUpdate.TabIndex = 4;
+            this.ButtonUpdate.Text = "Update";
             // 
-            // siticoneButton3
+            // ButtonDelete
             // 
-            this.siticoneButton3.BorderRadius = 10;
-            this.siticoneButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.siticoneButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.siticoneButton3.FillColor = System.Drawing.Color.Red;
-            this.siticoneButton3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
-            this.siticoneButton3.ForeColor = System.Drawing.Color.White;
-            this.siticoneButton3.IndicateFocus = true;
-            this.siticoneButton3.Location = new System.Drawing.Point(475, 593);
-            this.siticoneButton3.Name = "siticoneButton3";
-            this.siticoneButton3.Size = new System.Drawing.Size(142, 44);
-            this.siticoneButton3.TabIndex = 5;
-            this.siticoneButton3.Text = "Delete";
+            this.ButtonDelete.BorderRadius = 10;
+            this.ButtonDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonDelete.FillColor = System.Drawing.Color.Red;
+            this.ButtonDelete.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
+            this.ButtonDelete.ForeColor = System.Drawing.Color.White;
+            this.ButtonDelete.IndicateFocus = true;
+            this.ButtonDelete.Location = new System.Drawing.Point(475, 593);
+            this.ButtonDelete.Name = "ButtonDelete";
+            this.ButtonDelete.Size = new System.Drawing.Size(142, 44);
+            this.ButtonDelete.TabIndex = 5;
+            this.ButtonDelete.Text = "Delete";
+            // 
+            // textBoxSN
+            // 
+            this.textBoxSN.Location = new System.Drawing.Point(147, 107);
+            this.textBoxSN.MaxLength = 4;
+            this.textBoxSN.Name = "textBoxSN";
+            this.textBoxSN.Size = new System.Drawing.Size(145, 20);
+            this.textBoxSN.TabIndex = 6;
+            // 
+            // textBoxMTBF
+            // 
+            this.textBoxMTBF.Location = new System.Drawing.Point(318, 107);
+            this.textBoxMTBF.Name = "textBoxMTBF";
+            this.textBoxMTBF.Size = new System.Drawing.Size(145, 20);
+            this.textBoxMTBF.TabIndex = 7;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(489, 107);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(145, 20);
+            this.textBoxName.TabIndex = 8;
+            // 
+            // textBoxType
+            // 
+            this.textBoxType.Location = new System.Drawing.Point(147, 182);
+            this.textBoxType.Name = "textBoxType";
+            this.textBoxType.Size = new System.Drawing.Size(145, 20);
+            this.textBoxType.TabIndex = 9;
+            // 
+            // textBoxDesc
+            // 
+            this.textBoxDesc.Location = new System.Drawing.Point(327, 182);
+            this.textBoxDesc.Multiline = true;
+            this.textBoxDesc.Name = "textBoxDesc";
+            this.textBoxDesc.Size = new System.Drawing.Size(300, 151);
+            this.textBoxDesc.TabIndex = 10;
+            // 
+            // listBoxSiteID
+            // 
+            this.listBoxSiteID.FormattingEnabled = true;
+            this.listBoxSiteID.Location = new System.Drawing.Point(157, 367);
+            this.listBoxSiteID.Name = "listBoxSiteID";
+            this.listBoxSiteID.Size = new System.Drawing.Size(212, 121);
+            this.listBoxSiteID.TabIndex = 11;
+            // 
+            // labelSn
+            // 
+            this.labelSn.Location = new System.Drawing.Point(194, 81);
+            this.labelSn.Name = "labelSn";
+            this.labelSn.Size = new System.Drawing.Size(68, 23);
+            this.labelSn.TabIndex = 12;
+            this.labelSn.Text = "SN";
+            // 
+            // labelMTBF
+            // 
+            this.labelMTBF.Location = new System.Drawing.Point(361, 81);
+            this.labelMTBF.Name = "labelMTBF";
+            this.labelMTBF.Size = new System.Drawing.Size(68, 23);
+            this.labelMTBF.TabIndex = 13;
+            this.labelMTBF.Text = "MTBF";
+            // 
+            // labelName
+            // 
+            this.labelName.Location = new System.Drawing.Point(534, 81);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(68, 23);
+            this.labelName.TabIndex = 14;
+            this.labelName.Text = "Name";
+            // 
+            // labelType
+            // 
+            this.labelType.Location = new System.Drawing.Point(194, 156);
+            this.labelType.Name = "labelType";
+            this.labelType.Size = new System.Drawing.Size(68, 23);
+            this.labelType.TabIndex = 15;
+            this.labelType.Text = "Type";
+            // 
+            // labelSiteID
+            // 
+            this.labelSiteID.Location = new System.Drawing.Point(235, 341);
+            this.labelSiteID.Name = "labelSiteID";
+            this.labelSiteID.Size = new System.Drawing.Size(68, 23);
+            this.labelSiteID.TabIndex = 16;
+            this.labelSiteID.Text = "Site ID";
+            // 
+            // labelDesc
+            // 
+            this.labelDesc.Location = new System.Drawing.Point(442, 156);
+            this.labelDesc.Name = "labelDesc";
+            this.labelDesc.Size = new System.Drawing.Size(68, 23);
+            this.labelDesc.TabIndex = 17;
+            this.labelDesc.Text = "Description";
             // 
             // Material
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 729);
-            this.Controls.Add(this.siticoneButton3);
-            this.Controls.Add(this.siticoneButton2);
-            this.Controls.Add(this.siticoneButton1);
+            this.Controls.Add(this.labelDesc);
+            this.Controls.Add(this.labelSiteID);
+            this.Controls.Add(this.labelType);
+            this.Controls.Add(this.labelName);
+            this.Controls.Add(this.labelMTBF);
+            this.Controls.Add(this.labelSn);
+            this.Controls.Add(this.listBoxSiteID);
+            this.Controls.Add(this.textBoxDesc);
+            this.Controls.Add(this.textBoxType);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.textBoxMTBF);
+            this.Controls.Add(this.textBoxSN);
+            this.Controls.Add(this.ButtonDelete);
+            this.Controls.Add(this.ButtonUpdate);
+            this.Controls.Add(this.ButtonAdd);
             this.Controls.Add(this.siticoneDataGridView1);
             this.Controls.Add(this.panelSideBar);
             this.Name = "Material";
@@ -260,7 +378,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.siticoneDataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label labelSn;
+        private System.Windows.Forms.Label labelMTBF;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelType;
+        private System.Windows.Forms.Label labelSiteID;
+        private System.Windows.Forms.Label labelDesc;
+
+        private System.Windows.Forms.ListBox listBoxSiteID;
+        private System.Windows.Forms.TextBox textBoxMTBF;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxType;
+        private System.Windows.Forms.TextBox textBoxDesc;
+
+        private System.Windows.Forms.TextBox textBoxSN;
 
         #endregion
 
@@ -276,8 +410,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton2;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton3;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton ButtonAdd;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton ButtonUpdate;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton ButtonDelete;
     }
 }
