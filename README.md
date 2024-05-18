@@ -13,7 +13,7 @@
 
 <h2>📌 Description de la Société</h2>
 
-<p><span class="important">GestionMatos</span> est une entreprise spécialisée dans la maintenance d’équipements informatiques. Elle intervient pour divers clients répartis sur plusieurs sites en France. Les types de maintenance effectués sont :</p>
+<p><span class="important">GestionMatos</span> est une entreprise fictif spécialisée dans la maintenance d’équipements informatiques. Elle intervient pour divers clients répartis sur plusieurs sites en France. Les types de maintenance effectués sont :</p>
 <ul>
     <li>Maintenance préventive (programmée à l'avance)</li>
     <li>Maintenance urgente (calculée sur la base du MTBF du matériel)</li>
