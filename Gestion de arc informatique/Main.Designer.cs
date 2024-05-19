@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelSideBar = new System.Windows.Forms.Panel();
             this.pictureBoxCreateInterv = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
             this.DateTimePickerInterv = new Siticone.Desktop.UI.WinForms.SiticoneDateTimePicker();
             this.TextBoxCommentary = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
@@ -42,11 +43,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CheckBoxStatus = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             this.ButtonCreateInterv = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.siticoneHtmlLabel1 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
             this.panelSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreateInterv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideBar
@@ -72,6 +73,17 @@
             this.pictureBoxCreateInterv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCreateInterv.TabIndex = 8;
             this.pictureBoxCreateInterv.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(48, 229);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // pictureBoxMenu
             // 
@@ -233,22 +245,22 @@
             this.ButtonCreateInterv.Text = "Create";
             this.ButtonCreateInterv.Click += new System.EventHandler(this.ButtonCreateInterv_Click);
             // 
-            // pictureBox1
+            // siticoneHtmlLabel1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(48, 229);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.siticoneHtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneHtmlLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneHtmlLabel1.Location = new System.Drawing.Point(507, 63);
+            this.siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
+            this.siticoneHtmlLabel1.Size = new System.Drawing.Size(325, 48);
+            this.siticoneHtmlLabel1.TabIndex = 14;
+            this.siticoneHtmlLabel1.Text = "Create Intervention ";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 729);
+            this.Controls.Add(this.siticoneHtmlLabel1);
             this.Controls.Add(this.ButtonCreateInterv);
             this.Controls.Add(this.CheckBoxStatus);
             this.Controls.Add(this.label1);
@@ -268,12 +280,13 @@
             this.Shown += new System.EventHandler(this.Main_Load);
             this.panelSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreateInterv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
+        private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel1;
 
         #endregion
 

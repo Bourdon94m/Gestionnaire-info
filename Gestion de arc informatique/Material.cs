@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -72,14 +73,25 @@ namespace Gestion_de_arc_informatique
 
             // Close the reader
             reader.Close();
+
+            // le label affiche la valeur du TrackBar et le met a jour
+            labelTrackBar.Text = TrackBarMTBF.Value.ToString(); // on load
+            TrackBarMTBF.Scroll += TrackBarMTBF_Scroll;
             
+            // Refresh the DataGridView
+            timer1.Start();
+            
+        }
+        private void TrackBarMTBF_Scroll(object sender, EventArgs e)
+        {
+            // Mettez à jour le texte du label avec la nouvelle valeur de la TrackBar
+            labelTrackBar.Text = TrackBarMTBF.Value.ToString();
         }
 
         private void siticoneButton1_Click(object sender, EventArgs e) {
     
         // Vérifiez si les zones de texte ne sont pas nulles et non vides
-        if (string.IsNullOrWhiteSpace(textBoxMTBF.Text) ||
-            string.IsNullOrWhiteSpace(textBoxType.Text) ||
+        if (string.IsNullOrWhiteSpace(textBoxType.Text) ||
             string.IsNullOrWhiteSpace(textBoxName.Text) ||
             string.IsNullOrWhiteSpace(listBoxSiteID.Text) ||
             string.IsNullOrWhiteSpace(textBoxSN.Text))
@@ -88,15 +100,15 @@ namespace Gestion_de_arc_informatique
             return;
         }
 
-        // Vérifiez si la zone de texte SN a exactement 4 caractères
-        if (textBoxSN.Text.Length != 4)
+        // Vérifiez si la zone de texte SN a exactement 6 caractères
+        if (textBoxSN.Text.Length != 6)
         {
-            MessageBox.Show("Le champ SN doit avoir exactement 4 caractères.");
+            MessageBox.Show("Le champ SN doit avoir exactement 6 caractères.");
             return;
         }
 
         // Vérifiez si la zone de texte SN contient uniquement des lettres majuscules et des chiffres
-        if (!System.Text.RegularExpressions.Regex.IsMatch(textBoxSN.Text, "^[A-Z0-9]{4}$"))
+        if (!System.Text.RegularExpressions.Regex.IsMatch(textBoxSN.Text, "^[A-Z0-9]{6}$"))
         {
             MessageBox.Show("Le champ SN ne peut contenir que des lettres majuscules et des chiffres.");
             return;
@@ -109,7 +121,7 @@ namespace Gestion_de_arc_informatique
 
             // Ajoutez les paramètres à la commande SQL
             command.Parameters.AddWithValue("@sn", textBoxSN.Text);
-            command.Parameters.AddWithValue("@mtbf", textBoxMTBF.Text);
+            command.Parameters.AddWithValue("@mtbf", TrackBarMTBF.Value);
             command.Parameters.AddWithValue("@name", textBoxName.Text);
             command.Parameters.AddWithValue("@description", textBoxDesc.Text);
             command.Parameters.AddWithValue("@type", textBoxType.Text);
@@ -117,10 +129,42 @@ namespace Gestion_de_arc_informatique
 
             // Exécutez la commande SQL
             command.ExecuteNonQuery();
+            // Rafraîchissez le DataGridView
 
              // Affichez un message de réussite
              MessageBox.Show("Matériel ajouté avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
         } 
+        }
+        
+        private void RefreshDataGridView()
+        {
+            // Créez une nouvelle commande SQL pour sélectionner toutes les données de la table
+            MySqlCommand command = new MySqlCommand("SELECT * FROM material", Program.dbConnectionBase.getActualConnection());
+
+            // Créez un nouvel adaptateur pour exécuter la commande de sélection
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+
+            // Créez une nouvelle DataTable pour stocker les données
+            DataTable table = new DataTable();
+
+            // Remplissez la DataTable avec les données de la base de données
+            adapter.Fill(table);
+            // Empeche la regeneration de colonnes
+            siticoneDataGridView1.AutoGenerateColumns = false;
+
+            // Affectez la DataTable au DataGridView pour rafraîchir les données affichées
+            siticoneDataGridView1.DataSource = table;
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void timer1_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            RefreshDataGridView();
+            timer1.Start();
         }
     }
 }
