@@ -411,7 +411,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 3000D;
+            this.timer1.Interval = 1000D;
             this.timer1.SynchronizingObject = this;
             this.timer1.Elapsed += new System.Timers.ElapsedEventHandler(this.timer1_Elapsed);
             // 

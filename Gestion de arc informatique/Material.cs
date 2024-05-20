@@ -78,8 +78,7 @@ namespace Gestion_de_arc_informatique
             labelTrackBar.Text = TrackBarMTBF.Value.ToString(); // on load
             TrackBarMTBF.Scroll += TrackBarMTBF_Scroll;
             
-            // Refresh the DataGridView
-            timer1.Start();
+            
             
         }
         private void TrackBarMTBF_Scroll(object sender, EventArgs e)
@@ -129,10 +128,11 @@ namespace Gestion_de_arc_informatique
 
             // Exécutez la commande SQL
             command.ExecuteNonQuery();
-            // Rafraîchissez le DataGridView
+            timer1.Start();
 
              // Affichez un message de réussite
              MessageBox.Show("Matériel ajouté avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             timer1.Stop();
         } 
         }
         
@@ -149,11 +149,21 @@ namespace Gestion_de_arc_informatique
 
             // Remplissez la DataTable avec les données de la base de données
             adapter.Fill(table);
+            
+            //vide le DataGridView
+            siticoneDataGridView1.Rows.Clear();
+            
             // Empeche la regeneration de colonnes
             siticoneDataGridView1.AutoGenerateColumns = false;
 
             // Affectez la DataTable au DataGridView pour rafraîchir les données affichées
-            siticoneDataGridView1.DataSource = table;
+            foreach (DataRow row in table.Rows)
+            {
+                //insert data in datagridview
+                siticoneDataGridView1.Rows.Add(row.ItemArray);
+                timer1.Stop();
+                
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -164,7 +174,6 @@ namespace Gestion_de_arc_informatique
         private void timer1_Elapsed(object sender, ElapsedEventArgs e)
         {
             RefreshDataGridView();
-            timer1.Start();
         }
     }
 }
