@@ -136,49 +136,7 @@ namespace Gestion_de_arc_informatique
                 MessageBox.Show($"{ex.Message}");
             }
         }
-
-
-        // Hash le mot de passe en params
-        public string hashPassword(string password)
-        {
-            byte[] salt = GenerateRandomSalt(); // Genere le salt randomly
-
-            //configuration des params PBKDF2
-            int iterations = 10000;
-            int derivedKeyLength = 32;
-
-
-            // Creer un obj PBKDF2 avec password et salt
-            using (Rfc2898DeriveBytes pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations))
-            {
-                //Calculer la clé dérivée
-                byte[] derivedKey = pbkdf2.GetBytes(derivedKeyLength);
-
-                //Convertir la clé dérivée en chaine héxa
-                StringBuilder sb = new StringBuilder();
-                foreach(byte b in derivedKey)
-                {
-                    sb.Append(b.ToString("x2"));
-                }
-
-                Console.WriteLine("Mot de passe haché (PBKDF2) : " + sb.ToString());
-                return sb.ToString();
-               
-            }
-
-        }
-
-        // Méthode pour générer un sel aléatoire
-        public byte[] GenerateRandomSalt()
-        {
-            byte[] salt = new byte[16]; // 16 octets pour le sel
-            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
-            {
-                rng.GetBytes(salt);
-            }
-            return salt;
-        }
-
+        
         public void Close() { conn.Close(); }
 
 

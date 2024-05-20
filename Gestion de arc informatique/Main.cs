@@ -80,6 +80,11 @@ namespace Gestion_de_arc_informatique
         // Get all Staff and their first name from DB
         public void insertToComboBox()
         {
+            
+            //Vide les comboBox pour pas qu'elles contiennent des doublons
+            ComboBoxStaff.Items.Clear();
+            ComboBoxMaterial.Items.Clear();
+            
             // Insert les data dans les combobox
             DataSet dataSet_staff = new DataSet(); // initialise le dataset du staff
             DataSet dataSet_material = new DataSet(); // initialise le dataset du material
@@ -127,6 +132,7 @@ namespace Gestion_de_arc_informatique
                         {
                             object columnValue = $"{row["name"]}";
                             ComboBoxMaterial.Items.Add(columnValue);
+                            
                         }
 
                     }
