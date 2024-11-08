@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,66 +81,48 @@ namespace Gestion_de_arc_informatique
         // Get all Staff and their first name from DB
         public void insertToComboBox()
         {
-            
-            //Vide les comboBox pour pas qu'elles contiennent des doublons
             ComboBoxStaff.Items.Clear();
             ComboBoxMaterial.Items.Clear();
-            
-            // Insert les data dans les combobox
-            DataSet dataSet_staff = new DataSet(); // initialise le dataset du staff
-            DataSet dataSet_material = new DataSet(); // initialise le dataset du material
 
+            DataSet dataSet_staff = new DataSet();
+            DataSet dataSet_material = new DataSet();
 
+            string query_staff = "SELECT staff_id, first_name FROM staff";
+            string query_material = "SELECT name FROM material";
 
-            string query_staff = "SELECT id_staff, first_name FROM gestion_matos.staff";
-            string query_material = "SELECT name FROM gestion_matos.material";
-
-            // Using du staff
-            using (MySqlDataAdapter staff_adapter = new MySqlDataAdapter(query_staff,Program.dbConnectionBase.getActualConnection()))
+            // Staff DataAdapter
+            using (var staff_adapter = new NpgsqlDataAdapter(query_staff, Program.dbConnectionBase.getActualConnection()))
             {
                 try
                 {
-                    // Essaye de se connecter a la db
-                    Program.dbConnectionBase.getActualConnection();
-                    // Remplissez le DataSet avec les résultats de la requête
                     staff_adapter.Fill(dataSet_staff);
-
                     DataTable dataTable = dataSet_staff.Tables[0];
                     foreach (DataRow row in dataTable.Rows)
                     {
-                        object columnValue = $"[{row["id_staff"]}] {row["first_name"]}";
-                        ComboBoxStaff.Items.Add(columnValue);
+                        ComboBoxStaff.Items.Add($"[{row["id_staff"]}] {row["first_name"]}");
                     }
-
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error" + ex.Message);
                 }
+            }
 
-
-                using (MySqlDataAdapter material_adapter = new MySqlDataAdapter(query_material, Program.dbConnectionBase.getActualConnection()))
+            // Material DataAdapter
+            using (var material_adapter = new NpgsqlDataAdapter(query_material, Program.dbConnectionBase.getActualConnection()))
+            {
+                try
                 {
-                    try
+                    material_adapter.Fill(dataSet_material);
+                    DataTable dataTable = dataSet_material.Tables[0];
+                    foreach (DataRow row in dataTable.Rows)
                     {
-                        // Essaye de se connecter a la db
-                        Program.dbConnectionBase.getActualConnection();
-                        // Remplissez le DataSet avec les résultats de la requête
-                        material_adapter.Fill(dataSet_material);
-
-                        DataTable dataTable = dataSet_material.Tables[0];
-                        foreach (DataRow row in dataTable.Rows)
-                        {
-                            object columnValue = $"{row["name"]}";
-                            ComboBoxMaterial.Items.Add(columnValue);
-                            
-                        }
-
+                        ComboBoxMaterial.Items.Add(row["name"].ToString());
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Error" + ex.Message);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error" + ex.Message);
                 }
             }
         }
@@ -150,10 +133,6 @@ namespace Gestion_de_arc_informatique
             insertToComboBox();
         }
 
-        private void siticoneHtmlLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
@@ -162,5 +141,7 @@ namespace Gestion_de_arc_informatique
             materialWindow.Show();
             this.Visible = false;
         }
+
+        
     }
 }

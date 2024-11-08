@@ -15,7 +15,7 @@ namespace Gestion_de_arc_informatique
         [STAThread]
         static void Main()
         {
-            dbConnectionBase = new dbConnection("localhost", "gestion_matos", "root", "root");
+            dbConnectionBase = new dbConnection("localhost", "gestion_matos", "postgres", "root");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
