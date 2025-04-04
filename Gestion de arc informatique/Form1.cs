@@ -38,5 +38,10 @@ namespace Gestion_de_arc_informatique
         {
 
         }
+
+        private void siticoneHtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -182,7 +182,7 @@
             this.label3.Location = new System.Drawing.Point(264, 259);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 24);
+            this.label3.Size = new System.Drawing.Size(100, 28);
             this.label3.TabIndex = 8;
             this.label3.Text = "Material";
             // 
@@ -193,7 +193,7 @@
             this.label2.Location = new System.Drawing.Point(264, 161);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 24);
+            this.label2.Size = new System.Drawing.Size(64, 28);
             this.label2.TabIndex = 9;
             this.label2.Text = "Staff";
             // 
@@ -204,7 +204,7 @@
             this.label4.Location = new System.Drawing.Point(264, 399);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 24);
+            this.label4.Size = new System.Drawing.Size(150, 28);
             this.label4.TabIndex = 10;
             this.label4.Text = "Commentary";
             // 
@@ -215,7 +215,7 @@
             this.label1.Location = new System.Drawing.Point(789, 201);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(131, 28);
             this.label1.TabIndex = 11;
             this.label1.Text = "Interv Date";
             // 
@@ -231,7 +231,7 @@
             this.CheckBoxStatus.Location = new System.Drawing.Point(569, 213);
             this.CheckBoxStatus.Margin = new System.Windows.Forms.Padding(4);
             this.CheckBoxStatus.Name = "CheckBoxStatus";
-            this.CheckBoxStatus.Size = new System.Drawing.Size(129, 29);
+            this.CheckBoxStatus.Size = new System.Drawing.Size(158, 33);
             this.CheckBoxStatus.TabIndex = 12;
             this.CheckBoxStatus.Text = "Completed";
             this.CheckBoxStatus.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -266,7 +266,7 @@
             this.siticoneHtmlLabel1.Location = new System.Drawing.Point(504, 46);
             this.siticoneHtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
-            this.siticoneHtmlLabel1.Size = new System.Drawing.Size(285, 39);
+            this.siticoneHtmlLabel1.Size = new System.Drawing.Size(364, 39);
             this.siticoneHtmlLabel1.TabIndex = 14;
             this.siticoneHtmlLabel1.Text = "Create Intervention ";
             // 
@@ -294,6 +294,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "Form2";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.Shown += new System.EventHandler(this.Main_Load);
             this.panelSideBar.ResumeLayout(false);

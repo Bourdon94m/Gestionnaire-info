@@ -99,7 +99,7 @@ namespace Gestion_de_arc_informatique
                     DataTable dataTable = dataSet_staff.Tables[0];
                     foreach (DataRow row in dataTable.Rows)
                     {
-                        ComboBoxStaff.Items.Add($"[{row["id_staff"]}] {row["first_name"]}");
+                        ComboBoxStaff.Items.Add($"[{row["staff_id"]}] {row["first_name"]}");
                     }
                 }
                 catch (Exception ex)
