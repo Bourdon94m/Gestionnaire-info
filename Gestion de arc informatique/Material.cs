@@ -121,6 +121,12 @@ namespace Gestion_de_arc_informatique
 
         private void RefreshDataGridView()
         {
+            if (siticoneDataGridView1.InvokeRequired)
+            {
+                siticoneDataGridView1.Invoke(new Action(RefreshDataGridView));
+                return;
+            }
+
             using (var command = new NpgsqlCommand("SELECT * FROM material", Program.dbConnectionBase.getActualConnection()))
             {
                 using (var adapter = new NpgsqlDataAdapter(command))
@@ -137,8 +143,10 @@ namespace Gestion_de_arc_informatique
                     }
                 }
             }
+
             timer1.Stop();
         }
+
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -151,6 +159,34 @@ namespace Gestion_de_arc_informatique
 
         private void siticoneDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+
+        private void ButtonUpdate_Click(object sender, EventArgs e)
+        {
+
+            if (siticoneDataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = siticoneDataGridView1.SelectedRows[0];
+
+                string id = row.Cells[0].Value.ToString();
+                string sn = row.Cells[1].Value.ToString();
+                string mtbf = row.Cells[2].Value.ToString();
+                string name = row.Cells[3].Value.ToString();
+                string description = row.Cells[4].Value.ToString();
+                string type = row.Cells[5].Value.ToString();
+                string siteId = row.Cells[6].Value.ToString();
+
+                FormUpdate formUpdate = new FormUpdate(id, sn, Int32.Parse(mtbf), name, description, type, siteId);
+                formUpdate.Show();
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner une ligne à modifier.");
+            }
+
+
+
+
         }
     }
 }
