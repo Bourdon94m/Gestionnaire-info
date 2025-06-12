@@ -39,9 +39,30 @@ namespace Gestion_de_arc_informatique
             
             
         }
-        
+        public void InsertIntervention(DateTime plannedDate, string commentary, int materialId, bool completed, int staffId)
+        {
+            string query = @"INSERT INTO intervention 
+                     (planned_date, commentary, material_id, completed, staff_id) 
+                     VALUES (@planned_date, @commentary, @material_id, @completed, @staff_id);";
+
+            using (var command = new NpgsqlCommand(query, Program.dbConnectionBase.getActualConnection()))
+            {
+                command.Parameters.AddWithValue("@planned_date", plannedDate);
+                command.Parameters.AddWithValue("@commentary", commentary);
+                command.Parameters.AddWithValue("@material_id", materialId);
+                command.Parameters.AddWithValue("@completed", completed);
+                command.Parameters.AddWithValue("@staff_id", staffId);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+
         private void ButtonCreateInterv_Click(object sender, EventArgs e)
         {
+
+            DateTime dateInterv = DateTimePickerInterv.Value;
+
 
             if (DateTimePickerInterv.Value == null ||
                 ComboBoxStaff.SelectedItem == null ||
@@ -62,11 +83,11 @@ namespace Gestion_de_arc_informatique
                     int current_index = ComboBoxMaterial.SelectedIndex;
 
                     // Insert data in db and we create interventions here
-                    Program.dbConnectionBase.executeQuery(DateTimePickerInterv.Value.ToString("d"), // recupere la date en format dd/mm/yy
+                    InsertIntervention(dateInterv,
                      TextBoxCommentary.Text, // recupere le text
                      current_index + 1, // recupere l'index
                      CheckBoxStatus.Checked, // Recupere le bool
-                     ComboBoxStaff.SelectedItem.ToString()); // Recupere le text
+                     ComboBoxStaff.SelectedIndex); // Recupere le text
 
 
 

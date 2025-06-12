@@ -188,5 +188,54 @@ namespace Gestion_de_arc_informatique
 
 
         }
+
+        private void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            if (siticoneDataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Veuillez sélectionner une ligne à supprimer.");
+                return;
+            }
+
+            // Récupère la ligne sélectionnée
+            DataGridViewRow selectedRow = siticoneDataGridView1.SelectedRows[0];
+            int materialId = Convert.ToInt32(selectedRow.Cells[0].Value); // Colonne ID
+
+            // Confirmation
+            DialogResult confirm = MessageBox.Show(
+                "Êtes-vous sûr de vouloir supprimer ce matériel ?",
+                "Confirmation de suppression",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirm == DialogResult.Yes)
+            {
+                try
+                {
+                    string query = "DELETE FROM material WHERE material_id = @material_id";
+
+                    using (var command = new NpgsqlCommand(query, Program.dbConnectionBase.getActualConnection()))
+                    {
+                        command.Parameters.AddWithValue("@material_id", materialId);
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Matériel supprimé avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            RefreshDataGridView();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Échec de la suppression. Le matériel n'a pas été trouvé.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors de la suppression : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
     }
 }

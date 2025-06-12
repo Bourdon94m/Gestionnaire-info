@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Material));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxCreateInterv = new System.Windows.Forms.PictureBox();
@@ -74,10 +74,9 @@
             // 
             this.pictureBoxMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenu.Image")));
-            this.pictureBoxMenu.Location = new System.Drawing.Point(60, 39);
-            this.pictureBoxMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxMenu.Location = new System.Drawing.Point(40, 25);
             this.pictureBoxMenu.Name = "pictureBoxMenu";
-            this.pictureBoxMenu.Size = new System.Drawing.Size(71, 68);
+            this.pictureBoxMenu.Size = new System.Drawing.Size(47, 44);
             this.pictureBoxMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMenu.TabIndex = 3;
             this.pictureBoxMenu.TabStop = false;
@@ -85,10 +84,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(72, 352);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(48, 229);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(58, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(39, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -97,10 +95,9 @@
             // 
             this.pictureBoxCreateInterv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxCreateInterv.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCreateInterv.Image")));
-            this.pictureBoxCreateInterv.Location = new System.Drawing.Point(72, 254);
-            this.pictureBoxCreateInterv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxCreateInterv.Location = new System.Drawing.Point(48, 165);
             this.pictureBoxCreateInterv.Name = "pictureBoxCreateInterv";
-            this.pictureBoxCreateInterv.Size = new System.Drawing.Size(58, 58);
+            this.pictureBoxCreateInterv.Size = new System.Drawing.Size(39, 38);
             this.pictureBoxCreateInterv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCreateInterv.TabIndex = 8;
             this.pictureBoxCreateInterv.TabStop = false;
@@ -113,11 +110,10 @@
             this.panelSideBar.Controls.Add(this.pictureBox1);
             this.panelSideBar.Controls.Add(this.pictureBoxMenu);
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
-            this.panelSideBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panelSideBar.MaximumSize = new System.Drawing.Size(483, 1121);
-            this.panelSideBar.MinimumSize = new System.Drawing.Size(189, 1121);
+            this.panelSideBar.MaximumSize = new System.Drawing.Size(322, 729);
+            this.panelSideBar.MinimumSize = new System.Drawing.Size(126, 729);
             this.panelSideBar.Name = "panelSideBar";
-            this.panelSideBar.Size = new System.Drawing.Size(189, 1121);
+            this.panelSideBar.Size = new System.Drawing.Size(126, 729);
             this.panelSideBar.TabIndex = 1;
             // 
             // Column7
@@ -168,16 +164,16 @@
             this.siticoneDataGridView1.AllowUserToDeleteRows = false;
             this.siticoneDataGridView1.AllowUserToResizeColumns = false;
             this.siticoneDataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
-            this.siticoneDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.siticoneDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.siticoneDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.siticoneDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.siticoneDataGridView1.ColumnHeadersHeight = 15;
             this.siticoneDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.siticoneDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -188,21 +184,20 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.siticoneDataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.siticoneDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.siticoneDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
-            this.siticoneDataGridView1.Location = new System.Drawing.Point(960, 39);
-            this.siticoneDataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.siticoneDataGridView1.Location = new System.Drawing.Point(640, 25);
             this.siticoneDataGridView1.Name = "siticoneDataGridView1";
             this.siticoneDataGridView1.RowHeadersVisible = false;
             this.siticoneDataGridView1.RowHeadersWidth = 51;
-            this.siticoneDataGridView1.Size = new System.Drawing.Size(1007, 941);
+            this.siticoneDataGridView1.Size = new System.Drawing.Size(671, 612);
             this.siticoneDataGridView1.TabIndex = 2;
             this.siticoneDataGridView1.Theme = Siticone.Desktop.UI.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
             this.siticoneDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
@@ -239,10 +234,9 @@
             this.ButtonAdd.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonAdd.ForeColor = System.Drawing.Color.White;
             this.ButtonAdd.IndicateFocus = true;
-            this.ButtonAdd.Location = new System.Drawing.Point(262, 912);
-            this.ButtonAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ButtonAdd.Location = new System.Drawing.Point(175, 593);
             this.ButtonAdd.Name = "ButtonAdd";
-            this.ButtonAdd.Size = new System.Drawing.Size(213, 68);
+            this.ButtonAdd.Size = new System.Drawing.Size(142, 44);
             this.ButtonAdd.TabIndex = 3;
             this.ButtonAdd.Text = "Add";
             this.ButtonAdd.Click += new System.EventHandler(this.CreateIntervention);
@@ -257,10 +251,9 @@
             this.ButtonUpdate.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
             this.ButtonUpdate.ForeColor = System.Drawing.Color.White;
             this.ButtonUpdate.IndicateFocus = true;
-            this.ButtonUpdate.Location = new System.Drawing.Point(490, 912);
-            this.ButtonUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ButtonUpdate.Location = new System.Drawing.Point(327, 593);
             this.ButtonUpdate.Name = "ButtonUpdate";
-            this.ButtonUpdate.Size = new System.Drawing.Size(213, 68);
+            this.ButtonUpdate.Size = new System.Drawing.Size(142, 44);
             this.ButtonUpdate.TabIndex = 4;
             this.ButtonUpdate.Text = "Update";
             this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
@@ -276,89 +269,80 @@
             this.ButtonDelete.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
             this.ButtonDelete.ForeColor = System.Drawing.Color.White;
             this.ButtonDelete.IndicateFocus = true;
-            this.ButtonDelete.Location = new System.Drawing.Point(712, 912);
-            this.ButtonDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ButtonDelete.Location = new System.Drawing.Point(475, 593);
             this.ButtonDelete.Name = "ButtonDelete";
-            this.ButtonDelete.Size = new System.Drawing.Size(213, 68);
+            this.ButtonDelete.Size = new System.Drawing.Size(142, 44);
             this.ButtonDelete.TabIndex = 5;
             this.ButtonDelete.Text = "Delete";
+            this.ButtonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
             // textBoxDesc
             // 
-            this.textBoxDesc.Location = new System.Drawing.Point(477, 305);
-            this.textBoxDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxDesc.Location = new System.Drawing.Point(318, 198);
             this.textBoxDesc.Multiline = true;
             this.textBoxDesc.Name = "textBoxDesc";
-            this.textBoxDesc.Size = new System.Drawing.Size(448, 230);
+            this.textBoxDesc.Size = new System.Drawing.Size(300, 151);
             this.textBoxDesc.TabIndex = 10;
             // 
             // listBoxSiteID
             // 
             this.listBoxSiteID.FormattingEnabled = true;
-            this.listBoxSiteID.ItemHeight = 20;
-            this.listBoxSiteID.Location = new System.Drawing.Point(477, 582);
-            this.listBoxSiteID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBoxSiteID.Location = new System.Drawing.Point(318, 378);
             this.listBoxSiteID.Name = "listBoxSiteID";
-            this.listBoxSiteID.Size = new System.Drawing.Size(446, 244);
+            this.listBoxSiteID.Size = new System.Drawing.Size(299, 160);
             this.listBoxSiteID.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(215, 121);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(143, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 39);
+            this.label1.Size = new System.Drawing.Size(62, 25);
             this.label1.TabIndex = 12;
             this.label1.Text = "SN";
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(485, 122);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(323, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 39);
+            this.label2.Size = new System.Drawing.Size(62, 25);
             this.label2.TabIndex = 13;
             this.label2.Text = "MTBF";
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(719, 121);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(479, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 39);
+            this.label3.Size = new System.Drawing.Size(62, 25);
             this.label3.TabIndex = 14;
             this.label3.Text = "Name";
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(215, 236);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(143, 153);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 39);
+            this.label4.Size = new System.Drawing.Size(62, 25);
             this.label4.TabIndex = 15;
             this.label4.Text = "Type";
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(613, 254);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(409, 165);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 39);
+            this.label5.Size = new System.Drawing.Size(99, 25);
             this.label5.TabIndex = 16;
             this.label5.Text = "Description";
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(647, 541);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(431, 352);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 39);
+            this.label6.Size = new System.Drawing.Size(62, 25);
             this.label6.TabIndex = 17;
             this.label6.Text = "Site ID";
             // 
@@ -375,14 +359,13 @@
             this.textBoxSN.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxSN.ForeColor = System.Drawing.Color.Black;
             this.textBoxSN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxSN.Location = new System.Drawing.Point(220, 165);
-            this.textBoxSN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxSN.Location = new System.Drawing.Point(147, 107);
             this.textBoxSN.MaxLength = 6;
             this.textBoxSN.Name = "textBoxSN";
             this.textBoxSN.PasswordChar = '\0';
             this.textBoxSN.PlaceholderText = "";
             this.textBoxSN.SelectedText = "";
-            this.textBoxSN.Size = new System.Drawing.Size(202, 42);
+            this.textBoxSN.Size = new System.Drawing.Size(135, 27);
             this.textBoxSN.TabIndex = 18;
             // 
             // textBoxName
@@ -398,13 +381,12 @@
             this.textBoxName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxName.ForeColor = System.Drawing.Color.Black;
             this.textBoxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxName.Location = new System.Drawing.Point(724, 165);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxName.Location = new System.Drawing.Point(483, 107);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.PasswordChar = '\0';
             this.textBoxName.PlaceholderText = "";
             this.textBoxName.SelectedText = "";
-            this.textBoxName.Size = new System.Drawing.Size(202, 42);
+            this.textBoxName.Size = new System.Drawing.Size(135, 27);
             this.textBoxName.TabIndex = 20;
             // 
             // textBoxType
@@ -420,13 +402,12 @@
             this.textBoxType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxType.ForeColor = System.Drawing.Color.Black;
             this.textBoxType.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxType.Location = new System.Drawing.Point(220, 280);
-            this.textBoxType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxType.Location = new System.Drawing.Point(147, 182);
             this.textBoxType.Name = "textBoxType";
             this.textBoxType.PasswordChar = '\0';
             this.textBoxType.PlaceholderText = "";
             this.textBoxType.SelectedText = "";
-            this.textBoxType.Size = new System.Drawing.Size(202, 42);
+            this.textBoxType.Size = new System.Drawing.Size(135, 27);
             this.textBoxType.TabIndex = 21;
             // 
             // timer1
@@ -442,10 +423,10 @@
             this.NumericUpDownMTBF.BorderRadius = 10;
             this.NumericUpDownMTBF.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.NumericUpDownMTBF.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NumericUpDownMTBF.Location = new System.Drawing.Point(490, 165);
-            this.NumericUpDownMTBF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericUpDownMTBF.Location = new System.Drawing.Point(327, 107);
+            this.NumericUpDownMTBF.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.NumericUpDownMTBF.Name = "NumericUpDownMTBF";
-            this.NumericUpDownMTBF.Size = new System.Drawing.Size(198, 42);
+            this.NumericUpDownMTBF.Size = new System.Drawing.Size(132, 27);
             this.NumericUpDownMTBF.TabIndex = 23;
             // 
             // siticoneHtmlLabel1
@@ -453,17 +434,18 @@
             this.siticoneHtmlLabel1.AutoSize = false;
             this.siticoneHtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.siticoneHtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.siticoneHtmlLabel1.Location = new System.Drawing.Point(414, 39);
+            this.siticoneHtmlLabel1.Location = new System.Drawing.Point(276, 25);
+            this.siticoneHtmlLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.siticoneHtmlLabel1.Name = "siticoneHtmlLabel1";
-            this.siticoneHtmlLabel1.Size = new System.Drawing.Size(326, 48);
+            this.siticoneHtmlLabel1.Size = new System.Drawing.Size(217, 31);
             this.siticoneHtmlLabel1.TabIndex = 24;
             this.siticoneHtmlLabel1.Text = "Create Material";
             // 
             // Material
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1021);
+            this.ClientSize = new System.Drawing.Size(1283, 664);
             this.Controls.Add(this.siticoneHtmlLabel1);
             this.Controls.Add(this.NumericUpDownMTBF);
             this.Controls.Add(this.textBoxType);
@@ -482,7 +464,6 @@
             this.Controls.Add(this.ButtonAdd);
             this.Controls.Add(this.siticoneDataGridView1);
             this.Controls.Add(this.panelSideBar);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Material";
             this.Text = "Material";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
